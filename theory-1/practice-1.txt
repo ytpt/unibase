@@ -1,0 +1,42 @@
+1. Что выводит данный код:
+
+const arr = [10, 12, 15, 21];
+
+for (var i = 0; i < arr.length; i++) {
+    setTimeout(function() {
+        console.log(arr[i] > 13 ? `Good: ${arr[i]}` : `Bad: ${arr[i]}`);
+    }, 3000)
+}
+
+Ответ: 4 раза ответ Bad: undefined
+
+2. Варианты модификации кода, чтобы ответ был следующим:
+Bad: 10, Bad: 12, Good: 15, Good: 21 :
+
+*Я не стала добавлять вариант просто заменить var на let, т.к. 
+такой код выведет все 4 значения в правильном порядке,
+но не через 3 сек каждый, а через 3 сек все разом.
+
+Вариант 1:
+
+const arr = [10, 12, 15, 21];
+
+for (let i = 0; i < arr.length; i++) {
+    setTimeout(function(index) {
+        return function() {
+            console.log(arr[index] > 13 ? `Good: ${arr[index]}` : `Bad: ${arr[index]}`);
+        }
+    }(i), 3000 * (i + 1));
+}
+
+Вариант 2:
+
+const arr = [10, 12, 15, 21];
+
+for (var i = 0; i < arr.length; i++) {
+    setTimeout((function(value) {
+        return function() {
+            console.log(value > 13 ? `Good: ${value}` : `Bad: ${value}`);
+        }
+    })(arr[i]), 3000 * i);
+}
