@@ -92,6 +92,40 @@ document.addEventListener("DOMContentLoaded", function() {
 
     resetLogoBtn.addEventListener("click", resetLogo);
 
+    // Select option
+    const selectContent = document.querySelector(".select__content");
+    const selectOptionsBlock = document.querySelector(".select__options");
+    const selectImage = document.querySelector(".select__button img");
+    let isOptionsVisible = false;
+
+    // Toggle options
+    selectContent.addEventListener("click", function() {
+        selectOptionsBlock.classList.toggle("active");
+        selectImage.style.transform = isOptionsVisible ? "scaleY(1)" : "scaleY(-1)";
+        isOptionsVisible = !isOptionsVisible;
+    });
+
+    // Option click effect
+    selectOptionsBlock.addEventListener("click", function(event) {
+        if (event.target.classList.contains("select__option")) {
+            let optionValue = event.target.textContent;
+            document.querySelector(".select__default").textContent = optionValue;
+            selectOptionsBlock.classList.remove("active");
+            selectImage.style.transform = "scaleY(1)";
+            isOptionsVisible = false;
+            event.stopPropagation();
+        }
+    });
+
+    // Close options while click outside
+    document.addEventListener("click", function(event) {
+        if (!event.target.closest(".select")) {
+            selectOptionsBlock.classList.remove("active");
+            selectImage.style.transform = "scaleY(1)";
+            isOptionsVisible = false;
+        }
+    });
+
     // Validate form
     const validateForm = (form) => {
         const requiredInputs = form.querySelectorAll("input[data-required]");
@@ -158,6 +192,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Reset form
     const resetForm = (form) => {
         const inputs = form.querySelectorAll("input");
+        document.querySelector(".select__default").textContent = "Экология";
 
         inputs.forEach(input => {
             if (input.type === "file") {
@@ -187,6 +222,7 @@ document.addEventListener("DOMContentLoaded", function() {
             inputs.forEach(input => {
                 formValues[input.name] = input.value;
             });
+            formValues["scope"] = document.querySelector(".select__default").textContent;
 
             console.log(formValues);
             closePopup();

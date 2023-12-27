@@ -132,18 +132,63 @@ body {
     right: 15px;
 }
 
-.custom-select {
+.select {
     position: relative;
     width: 100%;
 }
 
-.custom-select select {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-image: url("assets/arrow-down-icon.svg");
-    background-repeat: no-repeat;
-    background-position: calc(100% - 15px) center;
+.select__default {
+    position: absolute;
+    top: 22px;
+    left: 16px;
+}
+
+.select__content {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    padding: 22px 16px 8px 16px;
+    border: 1px solid #D6DADE;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.select__options {
+    display: none;
+    position: absolute;
+    top: calc(100% - 1px);
+    left: 0;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    background-color: #fff;
+    border: 1px solid #D6DADE;
+    border-radius: 3px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.active {
+    display: block;
+}
+
+.disable {
+    color: #999;
+    pointer-events: none;
+}
+
+.select__option {
+    padding: 22px 16px 8px 16px;
+}
+
+.select__option:hover {
+    background-color: #f5f5f5;
+}
+
+.select__button {
+    border: none;
+    background-color: transparent;
     cursor: pointer;
 }
 
@@ -152,7 +197,9 @@ body {
     box-sizing: border-box;
     font-weight: 400;
     line-height: 24px;
-    padding: 16px 16px 8px 16px;
+    border-radius: 3px;
+    padding: 22px 16px 8px 16px;
+    height: 56px;
 }
 
 .input:focus {
@@ -164,6 +211,10 @@ body {
     color: #0C1014;
     font-weight: 400;
     line-height: 24px;
+}
+
+.input:focus::placeholder {
+    color: transparent;
 }
 
 .input-short {
@@ -284,13 +335,18 @@ body {
 }
 
 @media (max-width: 767px) {
+    body {
+        display: flex;
+    }
+
     .overlay {
         display: none!important;
     }
 
     .container {
+        position: relative;
+        height: 100vh;
         width: 95%;
-        height: 100%;
         font-size: 12px;
         margin: 0;
     }
@@ -302,7 +358,7 @@ body {
 
     .popup {
         width: 95%;
-        height: auto;
+        height: 100%;
         row-gap: 5px;
         border-radius: 0;
         padding: 5px;
@@ -342,6 +398,7 @@ body {
     }
 
     .input {
+        height: 43px;
         line-height: 10px;
         padding: 10px;
     }
@@ -359,7 +416,7 @@ body {
         width: 100%;
     }
 
-    select {
+    .select {
         font-size: 10px;
     }
 

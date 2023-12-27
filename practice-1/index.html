@@ -14,191 +14,190 @@
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <button class="start">Открыть форму</button>
-        <div class="hidden">
-            <h1 class="popup__title">Стать партнёром проекта</h1>
-            <form class="popup__form" id="form">
-                <div class="form__image-block">
-                    <div class="form__fields">
-                        <div class="form__field">
-                            <label for="name" class="form__field-title">
-                                <span class="required">✱</span>
-                                Название организации
-                            </label>
-                            <input
-                                id="name"
-                                name="company"
-                                data-required="true"
-                                data-min-length="2"
-                                data-max-length="20"
-                                type="text"
-                                placeholder="АВЦ"
-                                class="input input-short"
-                            >
-                        </div>
-                        <div class="form__field">
-                            <label for="phone" class="form__field-title">
-                                <span class="required">✱</span>
-                                Телефон
-                            </label>
-                            <input
-                                id="phone"
-                                name="tel"
-                                data-required="true"
-                                data-min-length="11"
-                                data-max-length="11"
-                                type="tel"
-                                placeholder="+7 933 848-34-33"
-                                class="input input-short"
-                            >
-                        </div>
-                        <div class="form__field" >
-                            <label for="email" class="form__field-title">
-                                <span class="required">✱</span>
-                                E-mail
-                            </label>
-                            <input
-                                id="email"
-                                name="email"
-                                data-required="true"
-                                data-min-length="5"
-                                data-max-length="25"
-                                type="email"
-                                placeholder="avc@gmail.com"
-                                class="input input-short"
-                            >
-                        </div>
-                    </div>
-                    <div class="popup__upload">
-                        <label for="file-input" class="file-input-title">
-                            <span class="required">✱</span>
-                            Логотип (jpeg, png)
-                        </label>
-                        <div class="file-input__content">
-                            <img src="assets/test-photo.png" alt="Фото" class="file-input__content-image">
-                            <div class="file-input__content-block">
-                                <img src="assets/upload-icon.svg" alt="Загрузить" class="file-input__content-icon">
-                                <p class="file-input__content-title">Выберите файл</p>
-                            </div>
-                        </div>
-                        <input
-                            id="file-input"
-                            name="logo"
-                            data-required="true"
-                            type="file"
-                            accept=".jpeg, .png"
-                            class="file-input"
-                        >
-                        <button class="popup__upload-close" type="button">
-                            <img src="assets/cross.png" alt="Удалить">
-                        </button>
-                    </div>
-                </div>
+<div class="container">
+    <button class="start">Открыть форму</button>
+    <div class="hidden">
+        <h1 class="popup__title">Стать партнёром проекта</h1>
+        <form class="popup__form" id="form">
+            <div class="form__image-block">
                 <div class="form__fields">
                     <div class="form__field">
-                        <div class="custom-select">
-                            <label for="scope" class="form__field-title">
-                                <span class="required">✱</span>
-                                Направление
-                            </label>
-                            <select
-                                id="scope"
-                                name="scope"
-                                data-required="true"
-                                class="input input-long"
-                            >
-                                <option value="ecology">Экология</option>
-                                <option value="it">IT</option>
-                                <option value="finance">Финансы</option>
-                            </select>
+                        <label for="name" class="form__field-title">
+                            <span class="required">✱</span>
+                            Название организации
+                        </label>
+                        <input
+                            id="name"
+                            name="company"
+                            data-required="true"
+                            data-min-length="2"
+                            data-max-length="20"
+                            type="text"
+                            placeholder="АВЦ"
+                            class="input input-short"
+                        >
+                    </div>
+                    <div class="form__field">
+                        <label for="phone" class="form__field-title">
+                            <span class="required">✱</span>
+                            Телефон
+                        </label>
+                        <input
+                            id="phone"
+                            name="tel"
+                            data-required="true"
+                            data-min-length="11"
+                            data-max-length="11"
+                            type="password"
+                            placeholder="+7 933 848-34-33"
+                            class="input input-short"
+                        >
+                    </div>
+                    <div class="form__field" >
+                        <label for="email" class="form__field-title">
+                            <span class="required">✱</span>
+                            E-mail
+                        </label>
+                        <input
+                            id="email"
+                            name="email"
+                            data-required="true"
+                            data-min-length="5"
+                            data-max-length="25"
+                            type="email"
+                            placeholder="avc@gmail.com"
+                            class="input input-short"
+                        >
+                    </div>
+                </div>
+                <div class="popup__upload">
+                    <label for="file-input" class="file-input-title">
+                        <span class="required">✱</span>
+                        Логотип (jpeg, png)
+                    </label>
+                    <div class="file-input__content">
+                        <img src="assets/test-photo.png" alt="Фото" class="file-input__content-image">
+                        <div class="file-input__content-block">
+                            <img src="assets/upload-icon.svg" alt="Загрузить" class="file-input__content-icon">
+                            <p class="file-input__content-title">Выберите файл</p>
                         </div>
                     </div>
-                    <div class="form__field">
-                        <label for="site"></label>
-                        <input
-                            id="site"
-                            name="site"
-                            type="text"
-                            placeholder="avc.ru"
-                            class="input input-long"
-                        >
-                        <img src="assets/globe-icon.svg" alt="Сайт" class="form__field-icon">
-                    </div>
-                    <div class="form__field">
-                        <label for="vk"></label>
-                        <input
-                            id="vk"
-                            name="vk"
-                            type="text"
-                            placeholder="vk.com/shans"
-                            class="input input-long"
-                        >
-                        <img src="assets/vk.svg" alt="Вконтакте" class="form__field-icon">
-                    </div>
-                    <div class="form__field">
-                        <label for="odnoklassniki"></label>
-                        <input
-                            id="odnoklassniki"
-                            name="odnoklassniki"
-                            type="text"
-                            placeholder="ok.com/shans"
-                            class="input input-long"
-                        >
-                        <img src="assets/odnoklassniki.svg" alt="Одноклассники" class="form__field-icon">
-                    </div>
-                    <div class="form__field">
-                        <label for="facebook"></label>
-                        <input
-                            id="facebook"
-                            name="facebook"
-                            type="text"
-                            placeholder="facebook.com/shans"
-                            class="input input-long"
-                        >
-                        <img src="assets/facebook.svg" alt="Фэйсбук" class="form__field-icon">
-                    </div>
-                    <div class="form__field">
-                        <label for="instagram"></label>
-                        <input
-                            id="instagram"
-                            name="instagram"
-                            type="text"
-                            placeholder="facebook.com/shans"
-                            class="input input-long"
-                        >
-                        <img src="assets/instagram.svg" alt="Инстаграм" class="form__field-icon">
-                    </div>
-                    <div class="form__field">
-                        <label for="youtube"></label>
-                        <input
-                            id="youtube"
-                            name="youtube"
-                            type="text"
-                            placeholder="youtube.com/shans"
-                            class="input input-long"
-                        >
-                        <img src="assets/youtube.svg" alt="Ютуб" class="form__field-icon">
-                    </div>
-                    <div class="form__field">
-                        <label for="manager" class="form__field-title">Руководитель</label>
-                        <input
-                            id="manager"
-                            name="manager"
-                            type="text"
-                            placeholder="Александров Иван Васильевич"
-                            class="input input-long"
-                        >
+                    <input
+                        id="file-input"
+                        name="logo"
+                        data-required="true"
+                        type="file"
+                        accept=".jpeg, .png"
+                        class="file-input"
+                    >
+                    <button class="popup__upload-close" type="button">
+                        <img src="assets/cross.png" alt="Удалить">
+                    </button>
+                </div>
+            </div>
+            <div class="form__fields">
+                <div class="form__field select">
+                    <label for="scope" class="form__field-title">
+                        <span class="required">✱</span>
+                        Направление
+                    </label>
+                    <span class="select__default">Экология</span>
+                    <div class="input select__content">
+                        <button class="select__button" type="button">
+                            <img src="assets/arrow-down-icon.svg" alt="Раскрыть" width="24" height="24">
+                        </button>
+                        <ul id="scope" class="select__options">
+                            <li class="select__option">Экология</li>
+                            <li class="select__option">IT</li>
+                            <li class="select__option">Финансы</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="form__buttons">
-                    <button class="form__buttons-button send">Стать партнёром проекта</button>
-                    <button class="form__buttons-button close" type="button">Отменить</button>
+                <div class="form__field">
+                    <label for="site"></label>
+                    <input
+                        id="site"
+                        name="site"
+                        type="text"
+                        placeholder="avc.ru"
+                        class="input input-long"
+                    >
+                    <img src="assets/globe-icon.svg" alt="Сайт" class="form__field-icon">
                 </div>
-            </form>
-        </div>
+                <div class="form__field">
+                    <label for="vk"></label>
+                    <input
+                        id="vk"
+                        name="vk"
+                        type="text"
+                        placeholder="vk.com/shans"
+                        class="input input-long"
+                    >
+                    <img src="assets/vk.svg" alt="Вконтакте" class="form__field-icon">
+                </div>
+                <div class="form__field">
+                    <label for="odnoklassniki"></label>
+                    <input
+                        id="odnoklassniki"
+                        name="odnoklassniki"
+                        type="text"
+                        placeholder="ok.com/shans"
+                        class="input input-long"
+                    >
+                    <img src="assets/odnoklassniki.svg" alt="Одноклассники" class="form__field-icon">
+                </div>
+                <div class="form__field">
+                    <label for="facebook"></label>
+                    <input
+                        id="facebook"
+                        name="facebook"
+                        type="text"
+                        placeholder="facebook.com/shans"
+                        class="input input-long"
+                    >
+                    <img src="assets/facebook.svg" alt="Фэйсбук" class="form__field-icon">
+                </div>
+                <div class="form__field">
+                    <label for="instagram"></label>
+                    <input
+                        id="instagram"
+                        name="instagram"
+                        type="text"
+                        placeholder="facebook.com/shans"
+                        class="input input-long"
+                    >
+                    <img src="assets/instagram.svg" alt="Инстаграм" class="form__field-icon">
+                </div>
+                <div class="form__field">
+                    <label for="youtube"></label>
+                    <input
+                        id="youtube"
+                        name="youtube"
+                        type="text"
+                        placeholder="youtube.com/shans"
+                        class="input input-long"
+                    >
+                    <img src="assets/youtube.svg" alt="Ютуб" class="form__field-icon">
+                </div>
+                <div class="form__field">
+                    <label for="manager" class="form__field-title">Руководитель</label>
+                    <input
+                        id="manager"
+                        name="manager"
+                        type="text"
+                        placeholder="Александров Иван Васильевич"
+                        class="input input-long"
+                    >
+                </div>
+            </div>
+            <div class="form__buttons">
+                <button class="form__buttons-button send">Стать партнёром проекта</button>
+                <button class="form__buttons-button close" type="button">Отменить</button>
+            </div>
+        </form>
     </div>
-    <div class="overlay"></div>
-    <script src="main.js"></script>
+</div>
+<div class="overlay"></div>
+<script src="main.js"></script>
 </body>
 </html>
